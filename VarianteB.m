@@ -27,4 +27,4 @@ title(['Realgasfaktor (T^* = ' num2str(T_red_start) ' ... '  num2str(T_red_end) 
 xlabel('$p^* \ /[-]$','Interpreter','Latex');
 ylabel('$z \ /[-]$','Interpreter','Latex');
 hold off
-axis([0 2 0.5 1.2]);
+axis([0 1 0.5 1.2]);

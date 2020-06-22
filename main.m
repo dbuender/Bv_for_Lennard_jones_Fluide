@@ -128,7 +128,7 @@ p_red_kritt= -3/(8*pi)*T_red./Bred_over_Tred;
 %==========================================================================
 %% Mayer funktions
 figure(1);
-for i=1:-5:length(T_red)
+for i=1:5:length(T_red)
     y=My_over_x(:,i);
     temp=300;
     hold on
