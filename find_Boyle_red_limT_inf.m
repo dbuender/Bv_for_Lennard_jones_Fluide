@@ -1,5 +1,9 @@
-function [T_inf,error]=find_Boyle_red_limT_inf()
+function [T_inf,error]=find_B_red_limT_inf()
 error=0;
+
+% this funcion Searchs for the Limes of B_red when T goes up. Therefore The
+% temperature will risen till the Diffrenc between the last Solutions of
+% B_red will be close enougth to Zero
 
 % defin the reduced distanc x = r/sigma
 x_diff=0.01;
@@ -18,6 +22,7 @@ Tdiff=10;
 T_inf=5;
 i=1;
 B_diff=1;
+
 while ~(1e-10>abs(B_diff)|(i>1e4))
     % counter
     i=i+1;
