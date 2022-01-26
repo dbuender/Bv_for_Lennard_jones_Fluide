@@ -1,6 +1,8 @@
-% Data for N_2
+% to use this scrpit first run main.m
+
+% Data for N_2 Quelle https://www.chemie.de/lexikon/Kritischer_Punkt_%28Thermodynamik%29.html
 T_kritt = 126.1; % [K]
-p_kritt = 3.394*10^6; % [Pa] Quelle https://www.chemie.de/lexikon/Kritischer_Punkt_%28Thermodynamik%29.html
+p_kritt = 3.394*10^6; % [Pa] 
 Rm=8.31446261815324; % [J/(mol K)]
 
 % LJ Parameter für N_2

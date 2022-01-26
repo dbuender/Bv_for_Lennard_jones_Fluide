@@ -1,3 +1,4 @@
+% to use this scrpit first run main.m
 
 %==========================================================================
 %            Computaion of specific molar entalphie

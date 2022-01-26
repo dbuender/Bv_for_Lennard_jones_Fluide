@@ -1,5 +1,5 @@
 function [T_Boyle_red,error]=find_Boyle_red()
-% this function will Locate the Boyle Temperature, by using iterative
+% this function will Locate the Boyle Temperature, by using an iterative
 % approach
 
 error=0;

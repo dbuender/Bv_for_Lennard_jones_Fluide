@@ -54,11 +54,12 @@ for i=1:length(T_red)
        
        My_over_x(n,i)=exp(-4/T_red(i)*(x(n)^-12-x(n)^-6))-1;
        
-       % if the the Distanc to zero is small enough and a My_over_x has
-       % negativ gradient
+       % if the the Distanc to zero is small enough and 
+       % wenn der Abstand klein genug ist und eine negative Steigung
+       % vorliegt wird abgebrochen
        if My_over_x(n,i)<My_target_diff && My_over_x(n,i)-My_over_x(n-1,i)<0 
            bool_x_reached=1;
-%            My_over_x(n+1,i)=-2; % the idea was to use it as cutoff to speed up integration 
+%            My_over_x(n+1,i)=-2; % the idea was to use it as cutoff to speed up intigration 
        elseif n==num_of_kritt_x
            bool_x_reached=1;
            error=1;
@@ -84,22 +85,22 @@ end
 % z = 1/2 + sqrt(1/4 + 2/3 * pi * B_red * p_red / T_red)
 
 % defin the reduced pressure
-%     p_red_start=0;
-%     p_red_end=2;
-%     n_p_red=100;
-%     p_red_diff=(p_red_end-p_red_start)/n_p_red;
-%     p_red=p_red_start:p_red_diff:p_red_end;
+% p_red_start=0;
+% p_red_end=2;
+% n_p_red=100;
+% p_red_diff=(p_red_end-p_red_start)/n_p_red;
+% p_red=p_red_start:p_red_diff:p_red_end;
 
 % define the intervall of the reduced pressure on logarithmic scale
-    p_red_start=1e-10;
-    p_red_end=1;
-    n_p_red=1000;
-    c=(log(p_red_end)-log(p_red_start))/n_p_red;
-    p_red=zeros(1,n_p_red);
-    p_red(1)=p_red_start;
-    for n=2:n_p_red
-        p_red(n)=p_red(n-1)*exp(c);
-    end
+p_red_start=1e-10;
+p_red_end=1;
+n_p_red=1000;
+c=(log(p_red_end)-log(p_red_start))/n_p_red;
+p_red=zeros(1,n_p_red);
+p_red(1)=p_red_start;
+for n=2:n_p_red
+    p_red(n)=p_red(n-1)*exp(c);
+end
 
 % compute z in a Matrix with T_red constant in each row and p_red in each
 % colum
@@ -111,7 +112,6 @@ end
 % as funktion of the Temperture
 % z = 1/2 + sqrt(1/4 + 2 * pi * B_red / (3 * T)) p_red
 
-% can be also optained by z_over_Tred = z_over_pred'
 z_over_Tred=zeros(length(T_red),length(p_red));
 for i=1:length(T_red)
     z_over_Tred(i,:) = 1/2 + sqrt(1/4 + 2/3 * pi * Bred_over_Tred .* p_red(i) ./ T_red);
@@ -120,7 +120,7 @@ end
 %==========================================================================
 %            Computaion of p_red_kritt
 %==========================================================================
-% p_red_kritt is the reduced pressure at wich the computation of z over
+% p_red_kritt is the reduced pressure at wich the computen of z over
 % Varaiant A is no longer possible
 % 
 p_red_kritt=zeros(1,length(T_red));
@@ -129,7 +129,7 @@ p_red_kritt= -3/(8*pi)*T_red./Bred_over_Tred;
 %==========================================================================
 %            Computaion of rho_red_kritt
 %==========================================================================
-% rho_red_kritt is the reduced pressure at wich the computen of z over
+% p_red_kritt is the reduced pressure at wich the computen of z over
 % Varaiant A is no longer possible
 % 
 rho_red_kritt=zeros(1,length(T_red));
